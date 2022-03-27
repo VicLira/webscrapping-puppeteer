@@ -9,21 +9,30 @@ console.log("Olá, sou o IMGBOT. Trarei as imagens que encontrar! 🤖");
 
     const browser = await puppeteer.launch({
         devtools: true,
-        headless: true
+        headless: false
     });
+    // Cria uma nova página
     const page = await browser.newPage();
+
+    // Configuração do timeout de navegação
+    await page.setDefaultNavigationTimeout(0);
+
     const search = readlineSync.question("Que tipo de imagens voce busca?: ");
     const websiteForScrapping = `https://www.pexels.com/pt-br/procurar/${search}/` || 'https://www.pexels.com/pt-br/';
 
 
     await page.goto(websiteForScrapping, { waitUntil: 'load' });
-    await page.waitForTimeout(5000);
+    await Promise.all([
+        page.waitForNavigation({
+            waitUntil: 'networkidle0',
+        }),
+    ]);
 
     const imgList = await page.evaluate(() => {
         // Toda essa função será executada no browser utilizando DOM.
 
         // Pegar todas as imagens que estao na parte de posts
-            const nodeList = document.querySelectorAll('.photo-item__img');
+            const nodeList = document.querySelectorAll('.photo-item__link .photo-item__img');
         // Transformar o NodeList em array
             const imgArray = [...nodeList]
 
