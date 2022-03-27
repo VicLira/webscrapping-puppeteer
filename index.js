@@ -9,10 +9,10 @@ console.log("Olá, sou o IMGBOT. Trarei as imagens que encontrar! 🤖");
 
     const browser = await puppeteer.launch({
         devtools: true,
-        headless: false
+        headless: true
     });
     const page = await browser.newPage();
-    const search = readlineSync.question("Que tipo de imagens você busca?: ");
+    const search = readlineSync.question("Que tipo de imagens voce busca?: ");
     const websiteForScrapping = `https://www.pexels.com/pt-br/procurar/${search}/` || 'https://www.pexels.com/pt-br/';
 
 
