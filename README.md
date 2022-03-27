@@ -1,8 +1,8 @@
 <h1 align="center">
-UI Clone - Discord
+WEBSCRAPPING WITH PUPPETEER
 </h1>
 
-<p align="center">Web Scrapping with Puppeteer (partial for study purposes.</p>
+<p align="center">Web Scrapping with Puppeteer for study purposes.</p>
 <p align="center">Deployed <a href="https://webscrapping-puppeteer.netlify.app/">here</a>.</p>
 
 <p align="center">
