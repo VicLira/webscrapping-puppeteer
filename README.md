@@ -15,7 +15,8 @@ WEBSCRAPPING WITH PUPPETEER
 
 <hr>
 
-
+<p align="center">
+<img src="https://user-images.githubusercontent.com/70662154/160284169-a048f715-a370-494f-970c-c8bf1281d980.PNG" width="800" align="center">
   
 </p>
 
